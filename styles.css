@@ -1,0 +1,475 @@
+/* 
+--- Colors
+light blue: #00afd5
+medium blue/green: #00586b
+very dark blue: #00293c
+light grey/beige: #ede5db
+
+--- Fonts
+font-family: 'Karla', sans-serif;
+font-family: 'Noto Serif', serif;
+*/
+
+* {
+  font-family: 'Karla', sans-serif;
+}
+
+/* background colour er samme farve som den nedeste footer, så der ikke vises hvid under footeren hvis ens skærm har en anden oplysning */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #00293c;
+}
+
+h1 {
+  font-family: 'Noto Serif', serif;
+  color: #00afd5;
+  font-size: 1.8em;
+}
+
+h2 {
+  font-family: 'Noto Serif', serif;
+  color: #00586b; 
+  font-size: 1.5em;
+}
+
+h3 {
+  font-family: 'Noto Serif', serif;
+  color: #00586b; 
+  margin-top: 20px;
+}
+
+h4 {
+  font-family: 'Karla', sans-serif;
+  color: #00afd5;
+  font-size: 1.2em;
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+  color:#00293c;
+  font-weight: 700;
+}
+
+a:hover {
+  color: #00293c;
+}
+
+
+
+/* NAVIGATION BAR INCL HAMBURGER MENU 
+SOURCE: https://alvarotrigo.com/blog/hamburger-menu-css/ I took inspiration from the first option shown on this web page, and adapted it 
+so it fits my design and style */
+
+/* (space between: evenly distributed over the area. 
+I put the menu items in one div together with the 'log på' button, so they stay together and 'space between' applies to the space inbetween that div on the right 
+and the logo on the left) */
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient( #00586b, #00afd5);
+    color: #FFF;
+    height: auto;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* rem = root em, measure related to font size
+  overflow hidden (below) is to hide the navigation text when the hamburger is collapsed */
+
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+
+  .menu > li:hover {
+    color: #00293c;
+  }
+
+  li > a {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+li > a:visited {
+    text-decoration: none;
+    color: #FFF;
+}
+
+li > a:hover {
+    text-decoration: none;
+    color: #00293c;
+}
+
+a.active {
+    color: #00293c !important;
+    font-weight: bold;
+} 
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  /* below starts the hamburger menu icon: which consists of a line shaped button, plus the same line above it (with margin negative) 
+  and the same line below (with margin positive) 
+  cubic-bezier is used for a smooth 4-point transition when rolling out the menu when the hamburger is toggled open */
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  /* Above ends the hamburger menu icon */
+
+  
+  /* below is the close menu button, which is constructed of the hamburger menu lines, turned 45 and -45 degrees to form a X.
+  Background color below defines the color of the third bar, and is set to opacity 0. That way it becomes invisible when the menu is toggled open.
+  This is useful because otherwise the X has a stripe through (as the X only contains of two of the three lines) */
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(45deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-45deg);
+  }
+  /* end of menu close button */
+  
+
+  /* 960px and narrower is the breakpoint I chose for the hamburger to show, because there the buttons don't fit in line anymore. 
+  This means that large screens (laptop, desktop etc) will show the full menu, while smaller screens (tablet, phone) will show the hamburger. */
+  @media (max-width: 960px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 85px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* below everything is zero because it is invisible when the menu is not toggled open */
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms ease-in-out;
+    }
+
+    /* below is visible when the menu is toggled open */
+    #menu-toggle:checked ~ .menu li {
+      border-top: 1px solid #FFF;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      background-color: #00afd5;
+    }
+
+
+    li > a {
+      text-decoration: none;
+      color: #00293c;
+    }
+  
+  li > a:visited {
+      text-decoration: none;
+      color: #00293c;
+  }
+  
+  li > a:hover {
+      text-decoration: none;
+      color: #00293c;
+  }
+  
+  a.active {
+    font-weight: bold;
+  } 
+  
+    .menu > li:hover {
+      background-color: #ede5db;
+    }
+  }
+
+
+  /* Log på button in menu plus the combination of all buttons */
+  .button-nav {
+    background-color: white;
+    border: 2px solid;
+    border-color: #00afd5;
+    border-radius:50px;
+    padding: 6px 8px;
+    font-family: 'Karla', sans-serif;
+    text-decoration: none;
+    font-size: 110%;
+    color: #00586b;
+    max-width: fit-content;
+    margin-right: 15px;
+}
+
+.button-nav:hover {
+  text-decoration: none;
+  color: #00586b;
+  background-color: #ede5db;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* END OF NAVIGATION */
+
+
+/* ------------------------------------------- Middle section ------------------------------------------- */
+
+
+
+/* below is to indicate that (on front page) for screens up from 992px the middle section items are displayed side by side. 
+For smaller screens, they are displayed below each other.
+I took inspiration for the media queries from the hamburger menu written above */
+
+.middlesection {
+  margin-top: 85px;
+  background-color: #FFF;
+}
+
+@media (min-width: 992px) {
+  .middlesection {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.middletext {
+  background-color: #FFF;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.welcome {
+  margin: auto;
+  max-width: 40em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.welcome > p {
+  color: #00293c;
+}
+
+.lefttext {
+  background-color: #ede5db;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nyhedcol {
+  margin: auto;
+  max-width: 40em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nyhedcol > p {
+  color: #00293c;
+}
+
+
+/* ----------- button for selvbetjening------------- */
+
+/* The button has a btn-class which comes with default Bootstrap settings. Below is to override some of these settings such as colour */
+
+.btn-info {
+    background-image: linear-gradient(#00586b, #00afd5);
+    border: none;
+    border-radius: 20px;
+    font-family: 'Karla', sans-serif;
+    font-size: 120%;
+    color: #ffffff;
+    max-width: fit-content;
+}
+
+.btn-info:hover {
+    background-image: linear-gradient(#004453, #08768f);
+    color:#FFF;
+}
+
+/* End of button */
+
+/* on big screens, the images need to be placed above each other. On smaller screens (smaller than 991.5px) the images need to be beside each other. 
+I indicated that below, and again took inspiration for media queries from the hamburger menu. It had to be 991.5 to avoid a point (992px) where things looked distorted.
+In the HTML you can see that a different image is loaded on smaller screens and on bigger screens.
+(imagecol = the div in which the photos are placed)  */
+.imagecol > img {
+  width: 100%;
+}
+
+@media (max-width: 991.5px) {
+.imagecol {
+  display: flex;
+  flex-direction: row;
+}
+.imgdoctor {
+  max-width: 50%;
+  height: auto;
+}
+.imghands {
+  max-width: 50%;
+  height: auto;
+}
+}
+
+
+/*  --------------------middle section for undersites ------------- */
+
+
+.sub-sites-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Line height is a bit larger than the default to make the paragraphs more pleasant to read on screens */
+.sub-sites-content > p {
+  line-height: 170%;
+}
+
+
+
+/* --- lægerne-side--- */
+
+.header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.doctor-item > h3 {
+  font-size: 1.2em;
+}
+
+
+/* ---praktisk info --- */
+
+.undermenu-item {
+  background-color: #00afd5;
+  height: fit-content;
+  padding: 15px 15px;
+  margin: 0px;
+  font-family: 'Karla', sans-serif;
+  color: #FFF;
+  font-size: 1.1em;
+}
+
+.undermenu-item:hover {
+  font-size: 1.1em;
+  color: #00293c;
+}
+
+/* Blueblock gives the impression that the submenu on the praktisk information-page stretches all across the screen on bigger screens,
+but makes sure the menu text stays in the middle */
+.blueblock {
+  background-color: #00afd5;
+}
+
+/* --- siderne der er 'under construction' 
+vh is percentage of viewport height. The size of the white section here is 70vh which means it takes up 70% of the viewport height----- */
+.under-construction {
+  height: 60vh;
+  padding: 10%
+}
+
+
+/* -------------------------------footer------------------------------ */
+
+footer {
+   background-color: #00586b;
+    display: block;
+    position: relative;
+    bottom: 0px;
+}
+
+/*  most important text (phone numbers, opening hours etc) are mentioned in the first block of the footer. The secondairy block underneath
+contains less important info which is the copyright and mandatory reference to educational purposes. */
+.footerblock {
+    color: #ffffff;
+    font-size: 90%;
+}
+
+.footersec {
+  background-color: #00293c;
+  padding-top: 5px;
+}
+
+.footersec > div {
+  text-align: center;
+  color: #b6b6b6;
+  font-size: 75%;
+}
+
+.f-header {
+  font-weight: 700;
+  color: #e0d4c4;
+}

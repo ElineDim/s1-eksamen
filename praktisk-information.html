@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Få praktisk information som kontaktoplysninger, åbningstider, vejen til Grønningens lægehus o.s.v.">
+    <meta name="keywords" content="grønningen lægehus, gronningen laegehus, læge i grønningen, sygeplejerske i grønningen, lægehus, praktisk, information, parkering, bil, offentlig transport,
+    nye patienter, kontakt, åbningstider, telefonnummer">
+    
+    <!-- Google fonts -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
+    </style>
+    
+    <!-- Bootstrap link with CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+    <!-- Adittional css stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- title plus logo in browser tab -->
+    <title>Praktisk information │ Grønningen Lægehus</title>
+    <link rel="icon" href="img/gronningen-lægehus-icon.png" type="image/icon">
+</head>
+
+
+<body>
+<!---------------------------- Navigation bar ----------------------------->
+<div class="top-nav">
+    <div class="headerlogo">
+      <a href="index.html"><img src="img/gronningen-lægehus-logo.png" alt="Gronningen Laegehus logo" class="logo" width="200"></a>
+    </div>
+    <div class="nav-buttons">
+    <div>
+        <a href="https://laegevejen.dk/Login" class="button-nav" role="button">Log på</a>
+    </div>
+    <input id="menu-toggle" type="checkbox">
+    <label class='menu-button-container' for="menu-toggle">
+    <span class='menu-button'></span>
+  </label>
+    <ul class="menu">
+      <li><a href="nyheder.html">Nyheder</a></li>
+      <li><a class="active" href="praktisk-information.html">Praktisk information</a></li>
+      <li><a href="lægerne.html">Lægerne</a></li>
+      <li><a href="om-lægehuset.html">Om lægehuset</a></li>
+      <li><a href="links.html">Links</a></li>
+    </ul>
+    </div>
+  </div>
+<!--  END OF NAVIGATION BAR -->
+
+
+<!-- ------------middle section ------------ -->
+
+<div class="middlesection">
+  <div class="sub-sites-main container-fluid g-0 row">
+   <div class="col-lg-12 col-xs-12">    
+    <picture>
+    <!-- Screens larger than 992px get a wide image, smaller screens get a narrower image. This is done the same way as on the front page (loading a 
+      different image on different screen sizes) -->
+    <source media="(min-width:992px)" srcset="img/gronningen-lægehus-reception-l.jpg">
+    <img src="img/gronningen-lægehus-reception-s.jpg" alt="Receptionist hos Gronningen Lægehus, taget af Pavel Danilyuk, Pexels" style="width:100%;">
+    </picture>
+   </div>
+   <div class="col-lg-3 blueblock"></div>
+   <div class="col-lg-7 col-xs-12 undermenu">
+      <a href="#kontakt"><h3 class="undermenu-item">Kontakt og åbningstider</h3></a>
+      <a href="#findhuset"><h3 class="undermenu-item">Hvor finder jeg lægehuset?</h3></a>
+      <a href="#nyepatienter"><h3 class="undermenu-item">Nye patienter</h3></a>
+   </div>
+   <div class="col-lg-2 blueblock"></div>
+   <div class="sub-sites-content col-lg-7 col-xs-12 offset-lg-3">
+      <br>
+    <h1 id="kontakt" >Praktisk information</h1><br><br>
+    <h2>Kontakt og åbningstider</h2>
+    <h4>Klinikkens telefon</h4>
+    <p>
+      For at bestille tid eller receptfornyelse kan du ringe til os fra <b>mandag til fredag kl. 08.00-10.00 
+      og 10.30-12.00</b>.<br>
+      Lægehusets telefonnummer er <b>97 97 00 00</b>.<br><br>
+
+    <i>Lægehuset er lukket i uge 6 pga. ferie. Ved akut sygdom kan du kontakte lægevagten på telefonnr. 77 99 77 99.
+      Det er ikke muligt at forny recept i uge 6. Hvis du har brug for receptfornyelse, henvises du til et andet lægehus.</i>
+    </p>
+    <h4>Ved akut sygdom eller skade</h4>
+    <p>Hvis der opstår akut sygdom eller skade, kan du ringe til vores akut-telefon.<br>
+       Akut-telefon er tilgængelig <b>mandag til fredag: kl. 12.00 - 16.00</b>.<br>
+       Akut-telefonnummeret er <b>09 07 09 07</b>.</p>
+    <h4>Lægevagt Region Midt-Vest</h4>
+    <p>Ved behov for lægekonsultation når lægehuset er lukket, kontaktes lægevagten for Region Midt-Vest.<br>
+       Lægevagten kan kontaktes indenfor det følgende tidsrum:<br>
+       Mandag til fredag: <b>kl. 16.00-8.00</b><br>
+       Weekend og helligdage: <b>hele døgnet</b>.</p>
+    <h4>Konsultationstid</h4>
+    <p>Konsultationer finder sted indenfor det følgende tidsrum:<br>
+       Mandag til torsdag: <b>kl. 8.00-12.30 og 13.30-16.00</b><br>
+       Fredag: <b>kl. 8.00-12.00</b><br>
+       Mellem 12.00 og 16.00 på fredage er klinikken kun åben for akut sygdom.</p>
+    <h4 id="findhuset">Sygebesøg</h4>
+    <p>Sygebesøg aftales så vidt muligt med sekretæren mellem kl. 8.00 og 9.00.</p>
+      <a href="praktisk-information.html" ><img src="img/back-to-top-icon.png" alt="back to top icon" width="35" style="float: right; padding-bottom:15px; padding-top:15px;"></a>
+    </div>
+
+    <div class="sub-sites-content col-lg-7 offset-lg-3 col-xs-12">
+    <h2>Hvor finder jeg lægehuset?</h2>
+    <h4>Adresse</h4>
+    <p>Grønningen Lægehus<br>
+      Martinivej 14<br>
+      9700 Grønningen
+    </p>
+    <h4>Find vej i bil</h4>
+    <p>Fortsæt lige ud i rundkørslen vestfra, og kør 3 km lige ud. Passér jernbanen, og drej til venstre. Lægehuset ligger forbi parken til højre.</p>
+    <h4>Parkering</h4>
+    <p>Der er en stor parkeringsplads lige ved indgangen. Brug pladserne hvor der står 'Reserveret til Grønningen Lægehus' på skiltet.</p>
+    </div>
+    <div class="col-lg-7 offset-lg-3 col-xs-12"><img src="img/gronningen-lægehus-parkering.jpg" alt="Lægehusets indgang og parkeringsplads, billede fra Jimmy T, Unsplash" style="width:100%;"></div>
+    <div class="sub-sites-content col-lg-7 offset-lg-3 col-xs-12">
+    <h4>Offentlig transport</h4>
+    <p>Banegården ligger 1,5 km fra lægehuset. Der er tog til Grønningen fra Herning. <br>
+      Du kan også tage bussen. Bus 23 standser overfor lægehusets indgang og kører hver time.
+    </p>
+    <h4 id="nyepatienter">Tilgængelighed med handicap</h4>
+    <p>Hele huset inklusive indgangen er indrettet handicapvenligt.</p><br><br>
+
+    <h2>Nye patienter</h2>
+    <p>Lægehuset er desværre lukket for nye patienter på nuværende tidspunkt.</p>
+    <a href="praktisk-information.html"><img src="img/back-to-top-icon.png" alt="back to top icon" width="35" style="float: right; padding-bottom:15px; padding-top:15px;"></a>
+    <br> 
+   </div>
+  </div>
+</div>
+
+
+
+
+<!-- ---------------------- footer ------------------------ -->
+<footer class="footermain">
+    <div class="container-fluid row">
+    <div class="col-lg-3 col-sm-6 footerblock p-3"><p><span class="f-header">Ring til os</span><br>
+        Telefonnr.: <b>97 97 00 00</b><br>
+        Telefontid: <b>kl. 08.00-10.00</b><br>
+        og <b>10.30-12.00</b></p>
+    </div>
+    <div class="col-lg-3 col-sm-6 footerblock p-3"><p><span class="f-header">Ved akut opstået sygdom</span><br> 
+        Akut-telefonnr.: <b>09 07 09 07</b><br>
+        Telefontid: <b>kl. 12.00-16.00</b></p>
+    </div>
+    <div class="col-lg-2 col-sm-6 footerblock p-3"><p><span class="f-header">Lægevagt</span><br>
+        Tilgængelig når lægehuset er lukket<br>
+        Telefonnr.: <b>77 99 77 99</b><br>
+        Telefontid: Hverdage <b>kl. 16.00-08.00</b> og <b>weekend og helligdage hele døgnet</b>.</p>
+    </div>
+    <div class="col-lg-3 offset-lg-1 col-sm-6 footerblock p-3"><p><span class="f-header">Vores adresse</span><br>
+        Grønningen Lægehus<br>
+        Martinivej 14<br>
+        9700 Grønningen</p>
+    </div>
+    </div>
+</footer>
+<footer class="footersec">
+    <div class="container-fluid row">
+        <p>Grønningen Lægehus &#169; 2022 &nbsp; &nbsp; &#x7C; &nbsp; &nbsp; Dette website er kun til undervisningsformål</p>
+    </div>
+</footer>
+<!-- unusual characters source: https://www.w3schools.com/charsets/ref_utf_basic_latin.asp -->
+</body>
+</html>

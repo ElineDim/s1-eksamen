@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="author" content="Margriet Helene Dimmendaal">
+    <meta name="description" content="Grønningen Lægehus er et stort lægehus i centrum af Grønningen.">
+    <meta name="keywords" content="grønningen lægehus, gronningen laegehus, læge i grønningen, sygeplejerske i grønningen, lægehus, kontakt, telefonnummer">
+    
+    <!-- Google fonts -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
+    </style>
+    
+    <!-- Bootstrap link with CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+    <!-- Adittional css stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- title plus logo in browser tab -->
+    <title>Grønningen Lægehus</title>
+    <link rel="icon" href="img/gronningen-lægehus-icon.png" type="image/icon">
+</head>
+
+
+<body>
+<!---------------------------- Navigation bar ----------------------------->
+
+<!-- On the front page, the 'log på' button is removed from the navigation bar because a bigger version of it is shown in the middle section of the page.
+First I had both of these buttons visible, but many test participants commented that they were uncertain whether there was a diffference between them.
+One person mentioned directly that he thought it unnecessary to have two buttons on the front page. Therefore I removed it from the navigation bar here.
+It does show on the other pages. 
+
+I use SPAN instead of DIV in one case because of a validation error. 
+Source: https://www.sitepoint.com/community/t/element-div-not-allowed-as-child-of-element-label-in-this-context-suppressing-further-errors-from-this-subtree/257008/2-->
+
+<div class="top-nav">
+    <div class="headerlogo">
+        <a href="index.html"><img src="img/gronningen-lægehus-logo.png" alt="Gronningen Laegehus logo" class="logo" width="200"></a>
+    </div>
+    <div class="nav-buttons">
+    <input id="menu-toggle" type="checkbox">
+    <label class='menu-button-container' for="menu-toggle">
+    <span class='menu-button'></span>
+  </label>
+    <ul class="menu">
+      <li><a href="nyheder.html">Nyheder</a></li>
+      <li><a href="praktisk-information.html">Praktisk information</a></li>
+      <li><a href="lægerne.html">Lægerne</a></li>
+      <li><a href="om-lægehuset.html">Om lægehuset</a></li>
+      <li><a href="links.html">Links</a></li>
+    </ul>
+    </div>
+</div>
+<!--  END OF NAVIGATION BAR -->
+
+
+
+
+<!------------------------------- middle section ----------------------------------->
+<!-- 'order' is used to change the order of the divs on large screens, as the welcome section needs to come first in HTML 
+    since it is the first section in mobile version. However on the large screens I want the news section to show first (on the right)
+    and the welcome section second (in the middle). Therefore I indicated the order seperately.
+    Source: https://getbootstrap.com/docs/5.0/layout/columns/ -->
+
+
+<div class="middlesection">
+    <div class="col-xs-12 col-lg-7 order-lg-2 g-0 middletext">
+        <div class="welcome">
+            <h1>Velkommen til Grønningen Lægehus</h1>
+            <p>Vi glæder os til at byde dig velkommen til vores lægehus i centrum af Grønningen.
+                Vores læge har mange års erfaring og er specialiseret i at lytte til dig og se dine behov.</p><br>
+                <!-- button for selvbetjening -->
+            <div class="text-center">
+                <a href="https://laegevejen.dk/Login" class="btn btn-info" role="button">Log på selvbetjening</a>
+            </div>
+                <!-- end of button -->
+        </div>
+    </div>
+    <div class="col-xs-12 col-lg-2 order-lg-3 imagecol">
+                <!-- source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_picture -->
+                <picture class="imgdoctor">
+                    <source media="(min-width:992px)" srcset="img/læge-og-patient-l.jpg">
+                    <img src="img/læge-og-patient-s.jpg" alt="Læge taler med patient, taget af Cottonbro Studio, Pexels" style="width:100%;">
+                  </picture>
+                  <picture class="imghands">
+                    <source media="(min-width:992px)" srcset="img/læge-med-laptop-l.jpg">
+                    <img src="img/læge-med-laptop-s.jpg" alt="Læge med laptop, taget af National Cancer Institute, Unsplash" style="width:100%;">
+                  </picture>
+    </div>
+    <div class="col-xs-12 col-lg-3 order-lg-1 lefttext">
+        <div class="nyhedcol">
+            <h2>Seneste nyhed</h2>
+            <p><b>Lægehuset er lukket i uge 6</b><br>
+               Grønningen Lægehus er lukket i uge 6 pga. ferie. Ved akut sygdom kontaktes lægevagten på telefonnr. 77 99 77 99. <br> 
+               <a href="nyheder.html" class="nyhedlink">Læs mere...</a></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- ---------------------- footer ------------------------ -->
+<footer class="footermain">
+    <div class="container-fluid row">
+    <div class="col-lg-3 col-sm-6 footerblock p-3"><p><span class="f-header">Ring til os</span><br>
+        Telefonnr.: <b>97 97 00 00</b><br>
+        Telefontid: <b>kl. 08.00-10.00</b><br>
+        og <b>10.30-12.00</b></p>
+    </div>
+    <div class="col-lg-3 col-sm-6 footerblock p-3"><p><span class="f-header">Ved akut opstået sygdom</span><br> 
+        Akut-telefonnr.: <b>09 07 09 07</b><br>
+        Telefontid: <b>kl. 12.00-16.00</b></p>
+    </div>
+    <!-- the column below was initially col-lg-3 like the others, but as this column has more content, it spread wider than the other three.
+    This way it looked as if there was uneven space between the columns which could look a bit messy. A test participant adviced to devide the distance evenly, after which
+    I indicated col-lg-2 for this one instead, now it does not go wider than two columns on large screens. I added a one column offset on the last footer item, to keep the
+    right distance between the columns.-->
+    <div class="col-lg-2 col-sm-6 footerblock p-3"><p><span class="f-header">Lægevagt</span><br>
+        Tilgængelig når lægehuset er lukket<br>
+        Telefonnr.: <b>77 99 77 99</b><br>
+        Telefontid: Hverdage <b>kl. 16.00-08.00</b> og <b>weekend og helligdage hele døgnet</b>.</p>
+    </div>
+    <div class="col-lg-3 offset-lg-1 col-sm-6 footerblock p-3"><p><span class="f-header">Vores adresse</span><br>
+        Grønningen Lægehus<br>
+        Martinivej 14<br>
+        9700 Grønningen</p>
+    </div>
+    </div>
+</footer>
+<footer class="footersec">
+    <div class="container-fluid row">
+        <p>Grønningen Lægehus &#169; 2022 &nbsp; &nbsp; &#x7C; &nbsp; &nbsp; Dette website er kun til undervisningsformål</p>
+    </div>
+</footer>
+<!-- unusual characters source: https://www.w3schools.com/charsets/ref_utf_basic_latin.asp -->
+</body>
+</html>
